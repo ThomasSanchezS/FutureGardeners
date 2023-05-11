@@ -8,6 +8,8 @@ public class Catch : MonoBehaviour
     public GameObject handPoint;
     
     private GameObject pickedObject = null;
+
+    public Animator animate;
    
     void Start()
     {
@@ -25,6 +27,7 @@ public class Catch : MonoBehaviour
                 pickedObject.GetComponent<Rigidbody>().isKinematic = false;
                 pickedObject.gameObject.transform.SetParent(null);
                 pickedObject = null;
+                animate.SetLayerWeight(1, 0f);
             }
         }
     }
@@ -40,6 +43,7 @@ public class Catch : MonoBehaviour
                 other.transform.position = handPoint.transform.position;
                 other.gameObject.transform.SetParent(handPoint.gameObject.transform);
                 pickedObject = other.gameObject;
+                animate.SetLayerWeight(1, 1f);
             }
         }
     }
