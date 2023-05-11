@@ -131,6 +131,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -6057140222963153312, guid: 82a2914d8f86c62488456950c8330e38, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 82a2914d8f86c62488456950c8330e38, type: 3}
+    - target: {fileID: -6057140222963153312, guid: 82a2914d8f86c62488456950c8330e38, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 535d24752e3d6444da644e79e90ec2ca, type: 2}
@@ -261,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPoint: {fileID: 1363069123}
+  animate: {fileID: 424235078}
 --- !u!1 &424235070 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 82a2914d8f86c62488456950c8330e38, type: 3}
@@ -281,7 +286,7 @@ MonoBehaviour:
   camera: {fileID: 963194228}
   speed: 4
   gravity: -9.18
-  animate: {fileID: 0}
+  animate: {fileID: 424235078}
 --- !u!143 &424235072
 CharacterController:
   m_ObjectHideFlags: 0
@@ -319,6 +324,11 @@ Rigidbody:
 --- !u!4 &424235077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 82a2914d8f86c62488456950c8330e38, type: 3}
+  m_PrefabInstance: {fileID: 369523275}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &424235078 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 82a2914d8f86c62488456950c8330e38, type: 3}
   m_PrefabInstance: {fileID: 369523275}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
@@ -624,7 +634,7 @@ Transform:
   m_GameObject: {fileID: 1153475187}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 3.89}
-  m_LocalScale: {x: 2.8427, y: 1, z: 2.5768}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
