@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlantsPool : MonoBehaviour
 {
+    public string plantInPool;
 
     private List<GameObject> poolObjects = new List<GameObject>();
 
     public int amountToPool = 4;
-
+    
     public GameObject objectToSpawn;
 
     void Awake()
