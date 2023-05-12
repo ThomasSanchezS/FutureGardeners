@@ -58,7 +58,7 @@ public class PlantsSpawner : MonoBehaviour
                 break;
 
             case 3:
-                GameObject GroupOfPlatforms3 = bG[Random.Range(0, bG.Count)].GetPooledObject();
+                GameObject GroupOfPlatforms3 = rG[Random.Range(0, bG.Count)].GetPooledObject();
                 if (GroupOfPlatforms3 != null)
                 {
                     GroupOfPlatforms3.transform.position = transform.position;
