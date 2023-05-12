@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class PlantsPool : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private List<GameObject> poolObjects = new List<GameObject>();
+
+    public int amountToPool = 4;
+
+    public GameObject objectToSpawn;
+
+    void Awake()
     {
-        
+        for (int i = 0; i < amountToPool; i++)
+        {
+            GameObject obj = Instantiate(objectToSpawn);
+            obj.SetActive(false);
+            poolObjects.Add(obj);
+        }
+
+    }
+    public GameObject GetPooledObject()
+    {
+        for (int i = 0; i < poolObjects.Count; i++)
+        {
+            if (!poolObjects[i].activeInHierarchy)
+            {
+                return poolObjects[i];
+            }
+        }
+
+        return null;
     }
 }
