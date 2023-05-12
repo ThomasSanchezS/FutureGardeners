@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5726690935488318825}
   - component: {fileID: 710132940745422921}
   m_Layer: 0
-  m_Name: Plant01_Textured
+  m_Name: PlantaAzul
   m_TagString: Collectibles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
