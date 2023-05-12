@@ -25,7 +25,7 @@ public class PlantsSpawner : MonoBehaviour
 
     public IEnumerator SpawnRound()
     {
-        for(int i = 0;i < spawnCount; i++) 
+        for(int i = 0;i < spawnCount+1; i++) 
         {
             Spawn();
             yield return new WaitForSeconds(3f);
