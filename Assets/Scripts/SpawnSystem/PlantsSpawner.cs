@@ -6,7 +6,7 @@ using UnityEngine.Pool;
 public class PlantsSpawner : MonoBehaviour
 {
     [SerializeField]
-    private List<PlantsPool> nG = new List<PlantsPool>();
+    private List<PlantsPool> bluePlant = new List<PlantsPool>();
     [SerializeField]
     private List<PlantsPool> bG = new List<PlantsPool>();
     [SerializeField]
@@ -23,6 +23,7 @@ public class PlantsSpawner : MonoBehaviour
         StartCoroutine(SpawnRound());
     }
 
+    // Coroutine to spawn waves of plants
     public IEnumerator SpawnRound()
     {
         for(int i = 0;i < spawnCount+1; i++) 
@@ -40,7 +41,7 @@ public class PlantsSpawner : MonoBehaviour
         switch (groupType)
         {
             case 1:
-                GameObject GroupOfPlatforms1 = nG[Random.Range(0, nG.Count)].GetPooledObject();
+                GameObject GroupOfPlatforms1 = bluePlant[Random.Range(0, bluePlant.Count)].GetPooledObject();
                 if (GroupOfPlatforms1 != null)
                 {
                     GroupOfPlatforms1.transform.position = transform.position;
