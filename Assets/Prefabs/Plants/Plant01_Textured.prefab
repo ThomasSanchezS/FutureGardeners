@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 23213178627998802}
   - component: {fileID: 3249880109231060923}
   - component: {fileID: 5726690935488318825}
+  - component: {fileID: 710132940745422921}
   m_Layer: 0
   m_Name: Plant01_Textured
   m_TagString: Collectibles
@@ -199,3 +200,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &710132940745422921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730768120861520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18298a6330ba9d479be92dfc95a1012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0

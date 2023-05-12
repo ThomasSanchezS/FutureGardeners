@@ -14,14 +14,21 @@ public class PlantsPool : MonoBehaviour
 
     void Awake()
     {
+        GeneratePlants();
+    }
+
+    //generate and put inactive the plants
+    private void GeneratePlants()
+    {
         for (int i = 0; i < amountToPool; i++)
         {
             GameObject obj = Instantiate(objectToSpawn);
             obj.SetActive(false);
             poolObjects.Add(obj);
         }
-
     }
+
+    //Return the plant to the spawner
     public GameObject GetPooledObject()
     {
         for (int i = 0; i < poolObjects.Count; i++)
