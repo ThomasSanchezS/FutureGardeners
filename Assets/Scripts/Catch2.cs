@@ -2,26 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Catch : MonoBehaviour
+public class Catch2 : MonoBehaviour
 {
 
     public GameObject handPoint;
-    
+
     private GameObject pickedObject = null;
 
     public Animator animate;
 
     void Start()
     {
-        
+
     }
 
-    
+
     void Update()
     {
-        if(pickedObject != null){
+        if (pickedObject != null)
+        {
 
-            if(Input.GetKey("m")){
+            if (Input.GetKey("r"))
+            {
 
                 pickedObject.GetComponent<Rigidbody>().useGravity = true;
                 pickedObject.GetComponent<Rigidbody>().isKinematic = false;
@@ -32,11 +34,14 @@ public class Catch : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other) {
+    private void OnTriggerStay(Collider other)
+    {
 
-        if (other.gameObject.CompareTag("Collectibles")) {
+        if (other.gameObject.CompareTag("Collectibles"))
+        {
 
-            if(Input.GetKey("n") && pickedObject == null){
+            if (Input.GetKey("e") && pickedObject == null)
+            {
 
                 other.GetComponent<Rigidbody>().useGravity = false;
                 other.GetComponent<Rigidbody>().isKinematic = true;
@@ -48,3 +53,4 @@ public class Catch : MonoBehaviour
         }
     }
 }
+

@@ -3771,7 +3771,7 @@ GameObject:
   - component: {fileID: 4431688812132267729}
   - component: {fileID: 4431688812132267694}
   m_Layer: 0
-  m_Name: RobotPrefabFinal
+  m_Name: Player2R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
