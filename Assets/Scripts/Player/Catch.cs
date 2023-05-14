@@ -10,12 +10,6 @@ public class Catch : MonoBehaviour
     private GameObject pickedObject = null;
 
     public Animator animate;
-
-    void Start()
-    {
-        
-    }
-
     
     void Update()
     {
