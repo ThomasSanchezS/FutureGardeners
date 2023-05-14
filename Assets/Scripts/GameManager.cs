@@ -29,6 +29,19 @@ public class GameManager : MonoBehaviour
 
     private void ChangePlantPoints()
     {
-        bluePlantPoints= 
+        bluePlantPoints = Random.Range(1, 4);
+
+        whitePlantPoints = bluePlantPoints;
+
+        while (bluePlantPoints == whitePlantPoints)
+        {
+            whitePlantPoints = Random.Range(1, 4);
+        }
+        redPlantPoints = bluePlantPoints;
+
+        while(bluePlantPoints == redPlantPoints || redPlantPoints == whitePlantPoints)
+        {
+            redPlantPoints= Random.Range(1, 4); ;
+        }
     }
 }
