@@ -11,37 +11,59 @@ public class GameManager : MonoBehaviour
     public int player1Points, player2Points;
     private int bluePlantPoints, whitePlantPoints, redPlantPoints;
 
-    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI timerText, blueText, whiteText, redText;
 
     private void Start()
     {
-        timerSaved = timer;
+        timerSaved = timer-30;
         player1Points = 0;
         player2Points = 0;
+        FindNewPlantPoints();
+        UpdatePlantPoints();
     }
 
     void Update()
     {
         timer-= Time.deltaTime;
 
-        timerText.text = ((int)timer).ToString() + " Sec"; 
+        timerText.text = ((int)timer).ToString() + " Sec";
+
+        ChangePlantPoints();
     }
 
     private void ChangePlantPoints()
     {
-        bluePlantPoints = Random.Range(1, 4);
+        if (timerSaved>= timer)
+        {
+            FindNewPlantPoints();
+            UpdatePlantPoints();
+            timerSaved -= 30;
+        }
+    }
+
+    private void UpdatePlantPoints()
+    {
+        blueText.text = bluePlantPoints.ToString();
+        whiteText.text = whitePlantPoints.ToString();
+        redText.text = redPlantPoints.ToString();
+    }
+
+
+    private void FindNewPlantPoints()
+    {
+        bluePlantPoints = (int)Random.Range(1, 4);
 
         whitePlantPoints = bluePlantPoints;
 
         while (bluePlantPoints == whitePlantPoints)
         {
-            whitePlantPoints = Random.Range(1, 4);
+            whitePlantPoints = (int)Random.Range(1, 4);
         }
         redPlantPoints = bluePlantPoints;
 
         while(bluePlantPoints == redPlantPoints || redPlantPoints == whitePlantPoints)
         {
-            redPlantPoints= Random.Range(1, 4); ;
+            redPlantPoints= (int)Random.Range(1, 4); ;
         }
     }
 }
