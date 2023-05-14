@@ -42,13 +42,15 @@ public class Catch2 : MonoBehaviour
 
             if (Input.GetKey("e") && pickedObject == null)
             {
-
+                TypeOfPlant plant = other.GetComponent<TypeOfPlant>();
+                plant.hasIt = TypeOfPlant.WhoHasit.Player2;
                 other.GetComponent<Rigidbody>().useGravity = false;
                 other.GetComponent<Rigidbody>().isKinematic = true;
                 other.transform.position = handPoint.transform.position;
                 other.gameObject.transform.SetParent(handPoint.gameObject.transform);
                 pickedObject = other.gameObject;
                 animate.SetLayerWeight(1, 1f);
+                Debug.Log(plant.hasIt);
             }
         }
     }
