@@ -30,8 +30,6 @@ public class GameManager : MonoBehaviour
         timer-= Time.deltaTime;
 
         timerText.text = ((int)timer).ToString() + " Sec";
-        points1Text.text = "P1: " + ((int)player2Points).ToString();
-        points2Text.text = "P2: " + ((int)player2Points).ToString();
 
         ChangePlantPoints();
     }
@@ -82,6 +80,51 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void UpdateP1P()
+    {
+        points1Text.text = "P1: " + ((int)player2Points).ToString();
+    }
+    private void UpdateP2P()
+    {
+        points2Text.text = "P2: " + ((int)player2Points).ToString();
+    }
+
+    public void AddBluePP1()
+    {
+        player1Points += bluePlantPoints;
+        UpdateP1P();
+    }
+
+    public void AddBluePP2()
+    {
+        player2Points += bluePlantPoints;
+        UpdateP2P();
+    }
+
+    public void AddWhitePP1()
+    {
+        player1Points += whitePlantPoints;
+        UpdateP1P();
+    }
+
+    public void AddWhitePP2()
+    {
+        player2Points += whitePlantPoints;
+        UpdateP2P();
+    }
+
+    public void AddRedPP1()
+    {
+        player1Points += redPlantPoints;
+        UpdateP1P();
+    }
+
+    public void AddRedPP2()
+    {
+        player2Points += redPlantPoints;
+        UpdateP2P();
+    }
+
 
     private void TextAnimation(){
         changePointText.gameObject.SetActive(true);
@@ -113,7 +156,7 @@ public class GameManager : MonoBehaviour
     }
 
     private IEnumerator hideLine(){
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         changePointText.gameObject.SetActive(false);
     }
 
