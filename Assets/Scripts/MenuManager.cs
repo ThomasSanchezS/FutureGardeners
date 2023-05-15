@@ -15,4 +15,12 @@ public class MenuManager : MonoBehaviour
 public void QuitGame () {
     Application.Quit();
     }
+
+public void ResetGame(){
+    //SceneManager.LoadScene(game);
+    }
+
+public void ExitToMainMenu(){
+    SceneManager.LoadScene("Menu");
+    }
 }
