@@ -3,20 +3,26 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private  float timer = 180;
+    private float timer = 90f;
     private float timerSaved;
 
     public int player1Points, player2Points;
     private int bluePlantPoints, whitePlantPoints, redPlantPoints;
     
 
-    public TextMeshProUGUI timerText, blueText, whiteText, redText, points1Text, points2Text, changePointText, startText;
+    public TextMeshProUGUI timerText, blueText, whiteText, redText, points1Text, points2Text, changePointText, startText, GOtextP1, GOtextP2;
+    public GameObject panelGameOver;
+    public GameObject UIGame;
 
     private void Start()
     {
+        Time.timeScale = 1f;
+        UIGame.gameObject.SetActive(true);
+        panelGameOver.gameObject.SetActive(false);
         timerSaved = timer-30;
         player1Points = 0;
         player2Points = 0;
@@ -32,17 +38,27 @@ public class GameManager : MonoBehaviour
         timerText.text = ((int)timer).ToString() + " Sec";
         points1Text.text = "P2: " + player1Points.ToString();
         points2Text.text = "P1: " + player2Points.ToString();
+        GOtextP1.text = player2Points.ToString();
+        GOtextP2.text = player1Points.ToString();
         ChangePlantPoints();
+        GameOver();
     }
 
-    private void GameOver(){
-        if(timer == 0 && player1Points > player2Points)
-        SceneManager.LoadScene("Player1Win");
-
-        if(timer == 0 && player1Points > player2Points){
-            SceneManager.LoadScene("Player2Win");
+    public void GameOver(){
+        if(timer <= 0){
+            UIGame.gameObject.SetActive(false);
+            panelGameOver.gameObject.SetActive(true);
+            Time.timeScale = 0f;
+            if(player1Points > player2Points){
+            GOtextP1.text = "Loser: " + player2Points.ToString();
+            GOtextP2.text = "Winner: " + player1Points.ToString();
+            }else if(player2Points > player1Points){
+                GOtextP1.text = "Winner: " + player2Points.ToString();
+                GOtextP2.text = "Loser: " + player1Points.ToString();
+            }
         }
-    }
+        }
+    
 
     private void ChangePlantPoints()
     {
@@ -152,8 +168,8 @@ public class GameManager : MonoBehaviour
     }
 
     private IEnumerator hideStart(){
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         startText.gameObject.SetActive(false);
         
     }
-}
+    }
