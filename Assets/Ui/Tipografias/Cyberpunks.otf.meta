@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 78323ce0eefc1cc4c8dacee0e665a104
+guid: 76ccb41552d7c3b4d91d820c42608b5d
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,7 +10,8 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Cyberpunks
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 78323ce0eefc1cc4c8dacee0e665a104, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

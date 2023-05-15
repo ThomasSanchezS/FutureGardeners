@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jugar
+  m_text: PLAY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2194256c0a37b8e418b738a058426291, type: 2}
   m_sharedMaterial: {fileID: 8693273979154535616, guid: 2194256c0a37b8e418b738a058426291, type: 2}
@@ -1221,9 +1221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Instrucciones
-
-'
+  m_text: INSTUCTIONS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2194256c0a37b8e418b738a058426291, type: 2}
   m_sharedMaterial: {fileID: 8693273979154535616, guid: 2194256c0a37b8e418b738a058426291, type: 2}
@@ -1328,7 +1326,7 @@ RectTransform:
   m_GameObject: {fileID: 1220426750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.075, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2025825954}
@@ -2117,7 +2115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cr\xE9ditos"
+  m_text: CREDITS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2194256c0a37b8e418b738a058426291, type: 2}
   m_sharedMaterial: {fileID: 8693273979154535616, guid: 2194256c0a37b8e418b738a058426291, type: 2}
@@ -2364,10 +2362,10 @@ RectTransform:
   m_Father: {fileID: 1220426751}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -236.6, y: 122.2}
-  m_SizeDelta: {x: 181.65, y: 81.838}
+  m_AnchorMin: {x: 0.02375, y: 0.66200006}
+  m_AnchorMax: {x: 0.35625002, y: 0.8286639}
+  m_AnchoredPosition: {x: -0.1000061, y: 1.699997}
+  m_SizeDelta: {x: 2.3420105, y: 0.08000183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1910711515
 MonoBehaviour:
@@ -2391,8 +2389,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: FUTURE GARDENERS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 71d27fa48f3b06f4888b2138cfdc078c, type: 2}
-  m_sharedMaterial: {fileID: -5505213405811293148, guid: 71d27fa48f3b06f4888b2138cfdc078c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b4323935b6240ea4a9e9e157bb21cca2, type: 2}
+  m_sharedMaterial: {fileID: -9041981725802667418, guid: b4323935b6240ea4a9e9e157bb21cca2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2416,14 +2414,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 33
+  m_fontSizeBase: 33
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2452,7 +2450,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.000030510753, w: 0}
+  m_margin: {x: 0, y: 0, z: -2.8963547, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2811,9 +2809,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Salir
-
-'
+  m_text: EXIT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2194256c0a37b8e418b738a058426291, type: 2}
   m_sharedMaterial: {fileID: 8693273979154535616, guid: 2194256c0a37b8e418b738a058426291, type: 2}
