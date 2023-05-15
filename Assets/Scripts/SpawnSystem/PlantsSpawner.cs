@@ -16,11 +16,16 @@ public class PlantsSpawner : MonoBehaviour
     [SerializeField]
     private List<GameObject> spawnZones = new List<GameObject>();
     private bool[] spawnersUsed = { false, false,false,false,false,false, false, false, false, false, false, false, false, false, false, false, false, false};
-    private int[] spawnZonesUsed = new int[9];
+    private int[] spawnZonesUsed = new int[18];
+
+    private int timeBetweenNewPlants = 5;
    
     void Start()
     {
-        StartSpawn(); 
+        StartSpawn();
+
+        //ReSpawnSystem
+        CallForNewPlants();
     }
 
     private void StartSpawn()
@@ -78,15 +83,69 @@ public class PlantsSpawner : MonoBehaviour
         plant.SetActive(true);
     }
 
-    public void CallForBluePlant()
+    //Aquí comienza el ReSpawnsysten improvisado
+
+    public void CallForNewPlants()
     {
-        StartCoroutine(SpawnANewBluePlant());
+        StartCoroutine(SpawnNewPlants());
     }
 
     // Coroutine to spawn waves of plants
-    public IEnumerator SpawnANewBluePlant()
+    public IEnumerator SpawnNewPlants()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(timeBetweenNewPlants);
+
+        FindFreeZone(9);
+        GameObject plant0 = bluePlantsPool[Random.Range(0, bluePlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(9, plant0);
+
+        yield return new WaitForSeconds(timeBetweenNewPlants);
+
+        FindFreeZone(10);
+        GameObject plant3 = whitePlantsPool[Random.Range(0, whitePlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(10, plant3);
+
+        yield return new WaitForSeconds(timeBetweenNewPlants);
+
+        FindFreeZone(11);
+        GameObject plant8 = redPlantsPool[Random.Range(0, redPlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(11, plant8);
+
+        yield return new WaitForSeconds(timeBetweenNewPlants);
+
+        FindFreeZone(12);
+        GameObject plant1 = bluePlantsPool[Random.Range(0, bluePlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(12, plant1);
+
+        yield return new WaitForSeconds(timeBetweenNewPlants);
+
+        FindFreeZone(13);
+        GameObject plant5 = whitePlantsPool[Random.Range(0, whitePlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(13, plant5);
+
+        yield return new WaitForSeconds(timeBetweenNewPlants);
+
+        FindFreeZone(14);
+        GameObject plant6 = redPlantsPool[Random.Range(0, redPlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(14, plant6);
+
+        yield return new WaitForSeconds(timeBetweenNewPlants);
+
+        FindFreeZone(15);
+        GameObject plant2 = bluePlantsPool[Random.Range(0, bluePlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(2, plant2);
+
+        yield return new WaitForSeconds(timeBetweenNewPlants);
+
+        FindFreeZone(16);
+        GameObject plant4 = whitePlantsPool[Random.Range(0, whitePlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(4, plant4);
+
+        yield return new WaitForSeconds(timeBetweenNewPlants);
+
+        FindFreeZone(17);
+        GameObject plant7 = redPlantsPool[Random.Range(0, redPlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(17, plant7);
 
     }
 }

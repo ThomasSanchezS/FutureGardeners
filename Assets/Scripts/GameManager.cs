@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private float timer = 90f;
+    private float timer = 120f;
     private float timerSaved;
 
     public int player1Points, player2Points;

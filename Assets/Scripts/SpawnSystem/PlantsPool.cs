@@ -8,7 +8,7 @@ public class PlantsPool : MonoBehaviour
 
     private List<GameObject> poolObjects = new List<GameObject>();
 
-    private int amountToPool = 3;
+    private int amountToPool = 6;
     
     public GameObject objectToSpawn;
 
