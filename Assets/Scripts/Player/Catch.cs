@@ -17,7 +17,7 @@ public class Catch : MonoBehaviour
     {
         if(pickedObject != null){
 
-            if(Input.GetKey("m")){
+            if(Input.GetKey("p")){
                 pickedObject.GetComponent<Rigidbody>().useGravity = true;
                 pickedObject.GetComponent<Rigidbody>().isKinematic = false;
                 pickedObject.gameObject.transform.SetParent(null);
@@ -33,7 +33,7 @@ public class Catch : MonoBehaviour
 
         if (other.gameObject.CompareTag("Collectibles")) {
 
-            if(Input.GetKey("n") && pickedObject == null){
+            if(Input.GetKey("o") && pickedObject == null){
                 TypeOfPlant plant = other.GetComponent<TypeOfPlant>();
                 plant.hasIt = TypeOfPlant.WhoHasit.Player1;
                 other.GetComponent<Rigidbody>().useGravity = false;

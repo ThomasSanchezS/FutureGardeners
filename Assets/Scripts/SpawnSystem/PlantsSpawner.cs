@@ -1,91 +1,92 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.Pool;
 
 public class PlantsSpawner : MonoBehaviour
 {
     [SerializeField]
-    private List<PlantsPool> bluePlant = new List<PlantsPool>();
+    private List<PlantsPool> bluePlantsPool = new List<PlantsPool>();
     [SerializeField]
-    private List<PlantsPool> bG = new List<PlantsPool>();
+    private List<PlantsPool> whitePlantsPool = new List<PlantsPool>();
     [SerializeField]
-    private List<PlantsPool> rG = new List<PlantsPool>();
+    private List<PlantsPool> redPlantsPool = new List<PlantsPool>();
 
-    private Vector3 startPosition;
-
-    public int movementStep = 5, spawnCount= 5;
-   
+    [SerializeField]
+    private List<GameObject> spawnZones = new List<GameObject>();
+    private bool[] spawnersUsed = { false, false,false,false,false,false, false, false, false, false, false, false, false, false, false, false, false, false};
+    private int[] spawnZonesUsed = new int[9];
    
     void Start()
     {
-        startPosition= transform.position;
-        StartCoroutine(SpawnRound());
+        StartSpawn(); 
+    }
+
+    private void StartSpawn()
+    {
+        FindFreeZone(0);
+        GameObject plant0 = bluePlantsPool[Random.Range(0, bluePlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(0, plant0);
+
+        FindFreeZone(1);
+        GameObject plant1 = bluePlantsPool[Random.Range(0, bluePlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(1, plant1);
+
+        FindFreeZone(2);
+        GameObject plant2 = bluePlantsPool[Random.Range(0, bluePlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(2, plant2);
+
+        FindFreeZone(3);
+        GameObject plant3 = whitePlantsPool[Random.Range(0, whitePlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(3, plant3);
+
+        FindFreeZone(4);
+        GameObject plant4 = whitePlantsPool[Random.Range(0, whitePlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(4, plant4);
+
+        FindFreeZone(5);
+        GameObject plant5 = whitePlantsPool[Random.Range(0, whitePlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(5, plant5);
+
+        FindFreeZone(6);
+        GameObject plant6 = redPlantsPool[Random.Range(0, redPlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(6, plant6);
+
+        FindFreeZone(7);
+        GameObject plant7 = redPlantsPool[Random.Range(0, redPlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(7, plant7);
+
+        FindFreeZone(8);
+        GameObject plant8 = redPlantsPool[Random.Range(0, redPlantsPool.Count)].GetPooledObject();
+        PutAPlantOnGame(8, plant8);
+    }
+
+    private void FindFreeZone(int position)
+    {
+        do
+        {
+            spawnZonesUsed[position] = (int)Random.Range(0, spawnZones.Count-1);
+
+        } while (spawnersUsed[spawnZonesUsed[position]] == true);
+
+    }
+    private void PutAPlantOnGame(int position, GameObject plant)
+    {
+        plant.transform.position = spawnZones[spawnZonesUsed[position]].transform.position;
+        spawnersUsed[spawnZonesUsed[position]] = true;
+        plant.SetActive(true);
+    }
+
+    public void CallForBluePlant()
+    {
+        StartCoroutine(SpawnANewBluePlant());
     }
 
     // Coroutine to spawn waves of plants
-    public IEnumerator SpawnRound()
+    public IEnumerator SpawnANewBluePlant()
     {
-        for(int i = 0;i < spawnCount+1; i++) 
-        {
-            Spawn();
-            yield return new WaitForSeconds(3f);
-        }
-    }
-
-    //Spawn the groups of platforms
-    private void Spawn()
-    {
-        int groupType = Random.Range(1, 4);
-
-        switch (groupType)
-        {
-            case 1:
-                GameObject GroupOfPlatforms1 = bluePlant[Random.Range(0, bluePlant.Count)].GetPooledObject();
-                if (GroupOfPlatforms1 != null)
-                {
-                    GroupOfPlatforms1.transform.position = transform.position;
-                    GroupOfPlatforms1.SetActive(true);
-                }
-                break;
-
-            case 2:
-                GameObject GroupOfPlatforms2 = bG[Random.Range(0, bG.Count)].GetPooledObject();
-                if (GroupOfPlatforms2 != null)
-                {
-                    GroupOfPlatforms2.transform.position = transform.position;
-                    GroupOfPlatforms2.SetActive(true);
-                }
-                break;
-
-            case 3:
-                GameObject GroupOfPlatforms3 = rG[Random.Range(0, bG.Count)].GetPooledObject();
-                if (GroupOfPlatforms3 != null)
-                {
-                    GroupOfPlatforms3.transform.position = transform.position;
-                    GroupOfPlatforms3.SetActive(true);
-
-                }
-                break;
-
-            default:
-                break;
-        }
-
-        Move();
-
-    }
-    private void Move()
-    {
-        if(startPosition.z >= movementStep*7)
-        {
-            transform.position = startPosition;
-        }
-
-        else
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + movementStep);
-        }
+        yield return new WaitForSeconds(3f);
 
     }
 }

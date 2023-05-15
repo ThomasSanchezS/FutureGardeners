@@ -22,7 +22,7 @@ public class Catch2 : MonoBehaviour
         if (pickedObject != null)
         {
 
-            if (Input.GetKey("r"))
+            if (Input.GetKey("y"))
             {
 
                 pickedObject.GetComponent<Rigidbody>().useGravity = true;
@@ -40,7 +40,7 @@ public class Catch2 : MonoBehaviour
         if (other.gameObject.CompareTag("Collectibles"))
         {
 
-            if (Input.GetKey("e") && pickedObject == null)
+            if (Input.GetKey("t") && pickedObject == null)
             {
                 TypeOfPlant plant = other.GetComponent<TypeOfPlant>();
                 plant.hasIt = TypeOfPlant.WhoHasit.Player2;
