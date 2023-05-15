@@ -11,6 +11,8 @@ public class Cubes : MonoBehaviour
     public CubeStatus status;
 
     public Material offMaterial, blueMaterial, whiteMaterial, redMaterial;
+    public AudioSource correct;
+    public AudioSource incorrect;
 
     Renderer rend;
 
@@ -66,8 +68,8 @@ public class Cubes : MonoBehaviour
                     {
                         SetCubeOff();
                         BluePP1?.Invoke();
-
-                        //sonido planta correcta
+                        correct.Play();
+                      
 
                     }
 
@@ -75,7 +77,8 @@ public class Cubes : MonoBehaviour
                     {
                         SetCubeOff();
                         WhitePP1?.Invoke();
-                        //sonido planta correcta
+                        correct.Play();
+                        
 
                     }
 
@@ -83,7 +86,8 @@ public class Cubes : MonoBehaviour
                     {                    
                         SetCubeOff();
                         RedPP1?.Invoke();
-                        //sonido planta correcta
+                        correct.Play();
+                        
 
                     }
 
@@ -92,17 +96,19 @@ public class Cubes : MonoBehaviour
                         if (typeOfPlant == TypeOfPlant.PlantType.Blue)
                         {
                             WrongBlue?.Invoke();
+                            incorrect.Play();
                         }
 
                         if (typeOfPlant == TypeOfPlant.PlantType.White)
                         {
                             WrongWhite?.Invoke();
-
+                            incorrect.Play();
                         }
 
                         if (typeOfPlant == TypeOfPlant.PlantType.Red)
                         {
                             WrongRed?.Invoke();
+                            incorrect.Play();
                         }
 
                         //sonido planta incorrecta
@@ -115,7 +121,8 @@ public class Cubes : MonoBehaviour
                     {                    
                         SetCubeOff();
                         BluePP2?.Invoke();
-                        //sonido planta correcta
+                        correct.Play();
+                        
 
                     }
 
@@ -123,8 +130,8 @@ public class Cubes : MonoBehaviour
                     {
                         SetCubeOff();
                         WhitePP2?.Invoke();
-
-                        //sonido planta correcta
+                        correct.Play();
+                        
 
                     }
 
@@ -132,8 +139,8 @@ public class Cubes : MonoBehaviour
                     {
                         SetCubeOff();
                         RedPP2?.Invoke();
-
-                        //sonido planta correcta
+                        correct.Play();
+                       
 
                     }
 
@@ -142,20 +149,23 @@ public class Cubes : MonoBehaviour
                         if (typeOfPlant == TypeOfPlant.PlantType.Blue)
                         {
                             WrongBlue?.Invoke();
+                            incorrect.Play();
                         }
 
                         if (typeOfPlant == TypeOfPlant.PlantType.White)
                         {
                             WrongWhite?.Invoke();
+                            incorrect.Play();
 
                         }
 
                         if (typeOfPlant == TypeOfPlant.PlantType.Red)
                         {
                             WrongRed?.Invoke();
+                            incorrect.Play();
                         }
 
-                        //sonido planta incorrecta
+                       
 
                     }
                 }
