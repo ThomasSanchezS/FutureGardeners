@@ -124,7 +124,6 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1 &69469985
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,8 +577,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
 >>>>>>> parent of 2a75672 (Scenas de GameOver)
-=======
->>>>>>> parent of 2a75672 (Scenas de GameOver)
 --- !u!1 &384297450
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,7 +669,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
 <<<<<<< HEAD
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
@@ -1679,10 +1675,6 @@ PrefabInstance:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 >>>>>>> parent of 2a75672 (Scenas de GameOver)
-=======
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
->>>>>>> parent of 2a75672 (Scenas de GameOver)
 --- !u!1 &1602441210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,7 +1758,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-<<<<<<< HEAD
 <<<<<<< HEAD
   m_LocalEulerAnglesHint: {x: 18.674, y: 0, z: 0}
 --- !u!1001 &1706607302
@@ -2188,9 +2179,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135351775}
   m_CullTransparentMesh: 1
-=======
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> parent of 2a75672 (Scenas de GameOver)
 =======
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> parent of 2a75672 (Scenas de GameOver)
